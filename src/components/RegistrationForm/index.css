@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  font-family: 'ROBOTO';
+}
+
+.react-app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.registration-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.registration-form h1 {
+  color: #ea580c;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.registration-form form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  border: none;
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  padding: 20px 20px;
+  border-radius: 10px;
+}
+
+.input-container {
+  padding: 0% auto;
+  margin: 10px 0px;
+}
+
+.input-container input {
+  font-weight: 500;
+  padding: 10px;
+  box-shadow: 0px 4px 16px 0px #bfbfbf;
+  border-radius: 5px;
+  border: 1px solid #9aa5b1;
+  width: 80%;
+}
+
+.input-container label {
+  color: #475569;
+  font-weight: bold;
+}
+
+.registration-form button {
+  background-color: #ea580c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+  align-self: center;
+}
+
+.registration-form button:hover {
+  background-color: #ff0b37;
+}
+
+.error-message {
+  color: #ff0b37;
+  margin: 0% auto;
+  padding: 0% auto;
+  text-align: left;
+}
+
+.success-image {
+  width: 50px;
+  align-self: center;
+}
