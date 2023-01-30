@@ -3,39 +3,47 @@ import {useState} from 'react'
 import './index.css'
 
 const RegistrationForm = () => {
-  const [firstName, setFirstName] = useState()
-  const [lastName, setLastName] = useState()
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [firstError, setFirstError] = useState(false)
   const [lastNameError, setLastNameError] = useState(false)
   const [displaySuccess, setDisplaySuccess] = useState(false)
 
   const getValidLastName = () => {
-    const isValidLastName = lastName === undefined
+    const isValidLastName = lastName !== ' '
     if (isValidLastName) {
-      setLastNameError(true)
+      setLastNameError(!lastName)
+    } else {
+      setLastNameError(!lastName)
     }
   }
 
   const getValidFirstName = () => {
-    const isValidFirstName = firstName === undefined
+    const isValidFirstName = firstName !== ' '
 
     if (isValidFirstName) {
-      setFirstError(true)
+      setFirstError(!firstName)
+    } else {
+      setFirstError(!firstName)
     }
   }
 
+  const ValidFirstName = () => firstName !== ''
+
+  const validLastName = () => lastName !== ''
+
   const submitForm = e => {
     e.preventDefault()
-    const isValidFirstName = firstName !== undefined
-    const isValidLastName = lastName !== undefined
+    const isValidFirstName = ValidFirstName()
+    const isValidLastName = validLastName()
 
     if (isValidFirstName && isValidLastName) {
       setFirstName('')
       setLastName('')
       setDisplaySuccess(true)
     } else {
-      setFirstError(!isValidFirstName)
       setLastNameError(!isValidLastName)
+      setFirstError(!isValidFirstName)
       setDisplaySuccess(false)
     }
   }
@@ -63,7 +71,7 @@ const RegistrationForm = () => {
       />
       <p style={{'text-align': 'center'}}>Submitted Successfully</p>
       <button type="button" onClick={getBackToReForm}>
-        Submit another Form
+        Submit Another Response
       </button>
     </div>
   )
